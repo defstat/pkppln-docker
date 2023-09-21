@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: php:8.1.7-apache
+    container_name: php-container
+    ports:
+      - "8087:80"
+    # volumes:
+    #   - ./pkppln:/var/www/html/pn
+    depends_on:
+      - mysql
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_DATABASE: pn
+      MYSQL_USER: pn
+      MYSQL_PASSWORD: abc123
+    command: sh -c "./startup.sh"
+  mysql:
+    image: mysql:8
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: abc123
+      MYSQL_DATABASE: pn
+      MYSQL_USER: pn
+      MYSQL_PASSWORD: abc123
+    ports:
+      - "3307:3306"
+    # volumes:
+    #   - ./mysql-config:/docker-entrypoint-initdb.d

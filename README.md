@@ -4,18 +4,20 @@
 3. Execute `docker-compose up --build`
 
 ## To stop and erase the containers 
-1. Execute `docker-compose down`
+Execute `docker-compose down`
 
 ## To have command-line access to the php-container 
-1. Execute `docker exec -it php-container /bin/bash`
+Execute `docker exec -it php-container /bin/bash`
 
 ## To have local access to the staging server
-1. http://localhost:8087/pn/public
+http://localhost:8087/pn/public
 
 ## To have local access to the mysql-container DB
-1. On your MySQL client application create a new connection with
+On your MySQL client application create a new connection with
+```
 Hostname: localhost
 Port: 3307
 Username: pn
 Password: abc123
 Default Schema: pn
+```

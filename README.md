@@ -9,7 +9,10 @@
 ## To have command-line access to the php-container 
 1. Execute `docker exec -it php-container /bin/bash`
 
-## To have local access to the mysql-container 
+## To have local access to the staging server
+1. http://localhost:8087/pn/public
+
+## To have local access to the mysql-container DB
 1. On your MySQL client application create a new connection with
 Hostname: localhost
 Port: 3307
